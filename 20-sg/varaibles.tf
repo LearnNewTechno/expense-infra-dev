@@ -49,3 +49,8 @@ variable "web_alb_sg_tags" {
     Component = "web-alb"
   }
 }
+variable "frontend_alb_sg_tags" {
+  default = {
+    Component = "frontend-alb"
+  }
+}
