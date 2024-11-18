@@ -27,6 +27,6 @@ resource "aws_route53_record" "expense" {
 }
 
 resource "aws_acm_certificate_validation" "expense" {
-  certificate_arn = aws_acm_certificate.expense.arn
-validation_record_fqdns = [for record in aws_route53_record.expense : record.fqdn]
+  certificate_arn         = aws_acm_certificate.expense.arn
+  validation_record_fqdns = [for record in aws_route53_record.expense : record.fqdn]
 }

@@ -1,10 +1,10 @@
 module "web_alb" {
   source = "terraform-aws-modules/alb/aws"
 
-  name                       = local.resource_name #expense-dev-app-alb
+  name                       = local.resource_name #expense-dev-web-alb
   vpc_id                     = local.vpc_id
   subnets                    = local.public_subnet_ids
-  internal                   = true
+  internal                   = false
   create_security_group      = false
   security_groups            = [data.aws_ssm_parameter.web_alb_sg_id.value]
   enable_deletion_protection = false
